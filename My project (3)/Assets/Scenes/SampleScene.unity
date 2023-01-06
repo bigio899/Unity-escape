@@ -8046,9 +8046,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 979119766}
-        m_TargetAssemblyTypeName: OptionsGameObject, Assembly-CSharp
-        m_MethodName: OnClickOptionButton
+      - m_Target: {fileID: 1355852037}
+        m_TargetAssemblyTypeName: UIScene, Assembly-CSharp
+        m_MethodName: OnExitButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
