@@ -6,6 +6,7 @@ public class GameManager1 : MonoBehaviour
 {
     private bool isCoroutineEnded = false;
     [SerializeField] GameObject loadingSubScene;
+    [SerializeField] GameObject gameButtons;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class GameManager1 : MonoBehaviour
         if(isCoroutineEnded==true)
         {
             loadingSubScene.gameObject.SetActive(false);
+            gameButtons.gameObject.SetActive(true);
         }
         
     }
