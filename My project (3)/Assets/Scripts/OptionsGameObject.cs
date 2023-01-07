@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class OptionsGameObject : MonoBehaviour
 {
+    //declaration of the varfiable where is allocated the date of level's avancement.
     private int levelAvancement=1;
     //declaration gameobjects's variables 
     [SerializeField] GameObject optionsMenu;
