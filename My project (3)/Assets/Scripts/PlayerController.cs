@@ -17,9 +17,9 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         //mod of the velocity of the rb with a new pos, the inputs are horizontal and vertical axis of the JoyStick(that are moltiplied for the speed movement)
-        playerRigidBody.velocity= new Vector3(fixedJoystick.Vertical * speedMovement, playerRigidBody.velocity.y , fixedJoystick.Horizontal * speedMovement);  //vertical=x value; horizontal=z value  (VECTOR WITH 3 DIMENSIONS)
+        playerRigidBody.velocity= new Vector3(fixedJoystick.Vertical * speedMovement, playerRigidBody.velocity.y , -fixedJoystick.Horizontal * speedMovement);  //vertical=x value; horizontal=z value  (VECTOR WITH 3 DIMENSIONS)
 
-        if ((fixedJoystick.Horizontal != 0) || (fixedJoystick.Vertical!=0))
+        if ((fixedJoystick.Horizontal != 0) || (fixedJoystick.Vertical!= 0))
         {
             transform.rotation= (Quaternion.LookRotation(playerRigidBody.velocity));
         }

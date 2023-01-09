@@ -3636,8 +3636,6 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Media
       m_Image: {fileID: 0}
-    - m_Text: Alta
-      m_Image: {fileID: 0}
     - m_Text: Super
       m_Image: {fileID: 0}
   m_OnValueChanged:
