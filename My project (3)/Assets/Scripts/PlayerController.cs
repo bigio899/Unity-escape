@@ -12,16 +12,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private FixedJoystick fixedJoystick;
     //declaration of a variable where is contained the value of the speed of movement(of the player.).
     private float speedMovement= 7.5f;
-
     //we use the fixed update because we will do physics calculus and modify at the rigidbody/box collider of the player.
     private void FixedUpdate()
     {
         //mod of the velocity of the rb with a new pos, the inputs are horizontal and vertical axis of the JoyStick(that are moltiplied for the speed movement)
-        playerRigidBody.velocity= new Vector3(fixedJoystick.Vertical * speedMovement, playerRigidBody.velocity.y , -fixedJoystick.Horizontal * speedMovement);  //vertical=x value; horizontal=z value  (VECTOR WITH 3 DIMENSIONS)
+        playerRigidBody.velocity= new Vector3(fixedJoystick.Horizontal * speedMovement, 0 , fixedJoystick.Vertical * speedMovement);  //vertical=x value; horizontal=z value  (VECTOR WITH 3 DIMENSIONS)
 
-        if ((fixedJoystick.Horizontal != 0) || (fixedJoystick.Vertical!= 0))
-        {
-            transform.rotation= (Quaternion.LookRotation(playerRigidBody.velocity));
-        }
     }
 }

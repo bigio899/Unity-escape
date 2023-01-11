@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class OptionsGameObject : MonoBehaviour
 {
-    //declaration of the varfiable where is allocated the date of level's avancement.
-    private int levelAvancement=1;
-    //declaration gameobjects's variables 
+    //declaration variables.
+    private int levelAvancement = 1; //declaration of the varfiable where is allocated the date of level's avancement.
+    //declaration gameobjects's variables
     [SerializeField] GameObject optionsMenu;
     [SerializeField] GameObject mainMenu;
+
     //function that is performed when the player click the Option button. 
     public void OnClickOptionButton()
     {
@@ -26,5 +26,6 @@ public class OptionsGameObject : MonoBehaviour
     public void ChangeSceneFromMenuToLevel()
     {
         SceneManager.LoadScene(levelAvancement);
+
     }
 }
