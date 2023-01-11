@@ -779,7 +779,7 @@ PlayerSettings:
   vrEditorSettings: {}
   cloudServicesEnabled:
     Build: 0
-    Collab: 1
+    Collab: 0
     Game Performance: 0
     Purchasing: 0
     UDP: 0
@@ -798,11 +798,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: c2f90ab3-3aa6-403c-9c36-364ab9cb3adb
+  cloudProjectId: f11e19bd-9f8a-4f40-baa2-a0abbccf15b7
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: My project (3)
-  organizationId: biagiobalsamo-4a2d670e-8417-4dfd-9149-cb0accddc472
+  organizationId: pietromusci
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
