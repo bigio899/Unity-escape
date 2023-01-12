@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.008648451, g: 0.008884113, b: 0.019687377, a: 1}
+  m_IndirectSpecularColor: {r: 0.008377835, g: 0.0088662505, b: 0.01908072, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -998,7 +998,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 108290928}
-  - component: {fileID: 108290927}
+  - component: {fileID: 108290929}
   m_Layer: 0
   m_Name: IntroLoad
   m_TagString: Untagged
@@ -1006,20 +1006,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &108290927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108290926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32c325f395b56f9478112fe6071f93a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadingIntro: {fileID: 1260075451}
-  gameButtons: {fileID: 1633989017}
 --- !u!4 &108290928
 Transform:
   m_ObjectHideFlags: 0
@@ -1035,6 +1021,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &108290929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108290926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdca127ca38bc16489bb936e2bec8a53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingIntro: {fileID: 1260075451}
+  gameButtons: {fileID: 1633989017}
 --- !u!1 &115324177
 GameObject:
   m_ObjectHideFlags: 0
@@ -2850,7 +2850,7 @@ GameObject:
   m_Component:
   - component: {fileID: 495810734}
   m_Layer: 5
-  m_Name: pannelli bianchi
+  m_Name: White Panels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3763,8 +3763,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2128944035}
-        m_TargetAssemblyTypeName: GraficChange, Assembly-CSharp
+      - m_Target: {fileID: 2128944037}
+        m_TargetAssemblyTypeName: GraphicFunction, Assembly-CSharp
         m_MethodName: setQuality
         m_Mode: 0
         m_Arguments:
@@ -9063,6 +9063,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdca127ca38bc16489bb936e2bec8a53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingIntro: {fileID: 1260075451}
+  gameButtons: {fileID: 1633989017}
 --- !u!4 &1355852038
 Transform:
   m_ObjectHideFlags: 0
@@ -14749,26 +14751,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2128944036}
-  - component: {fileID: 2128944035}
+  - component: {fileID: 2128944037}
   m_Layer: 0
-  m_Name: Grafic
+  m_Name: Graphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2128944035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2128944034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f73ff29f7183cc14a91b77d05efde091, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2128944036
 Transform:
   m_ObjectHideFlags: 0
@@ -14784,6 +14774,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2128944037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128944034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8e5a82dfb7511f498ff347b72f90a40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2135290294
 GameObject:
   m_ObjectHideFlags: 0

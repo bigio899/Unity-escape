@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //this line of code adds automatically the components "rigidbody" and "box collider" to the Player GameObject. 
-[RequireComponent(typeof(Rigidbody), typeof(BoxCollider))]
+[RequireComponent( typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
     //declaration of a variable where is contained the player's rigidbody 

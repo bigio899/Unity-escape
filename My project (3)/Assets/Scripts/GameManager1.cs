@@ -8,8 +8,8 @@ public class GameManager1 : MonoBehaviour
     //declaration variables.
     private bool isCoroutineEnded = false;
     //declaration gameobjects's variables 
-    [SerializeField] GameObject loadingSubScene;
-    [SerializeField] GameObject gameButtons;
+    [SerializeField] private GameObject loadingSubScene;
+    [SerializeField] private GameObject gameButtons;
 
     // Start is called before the first frame update.
     void Start()

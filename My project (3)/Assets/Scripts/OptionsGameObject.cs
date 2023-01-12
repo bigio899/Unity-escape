@@ -7,8 +7,8 @@ public class OptionsGameObject : MonoBehaviour
     //declaration variables.
     private int levelAvancement = 1; //declaration of the varfiable where is allocated the date of level's avancement.
     //declaration gameobjects's variables
-    [SerializeField] GameObject optionsMenu;
-    [SerializeField] GameObject mainMenu;
+    [SerializeField] private GameObject optionsMenu;
+    [SerializeField] private GameObject mainMenu;
 
     //function that is performed when the player click the Option button. 
     public void OnClickOptionButton()
@@ -25,7 +25,7 @@ public class OptionsGameObject : MonoBehaviour
     //function that is performed then the player click the Play button.
     public void ChangeSceneFromMenuToLevel()
     {
-        SceneManager.LoadScene(levelAvancement);
+        SceneManager.LoadScene(levelAvancement); //this line of code will open the scene of the level.
 
     }
 }
