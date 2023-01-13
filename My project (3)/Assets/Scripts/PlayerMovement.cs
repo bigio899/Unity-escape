@@ -6,7 +6,7 @@ using TMPro;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private CharacterController playerController; //reference to our character controller(motor that drives our player).
-    private static float speedOfTheMovement = 0.025f; //speed of the movement of the player
+    private static float speedOfTheMovement = 0.035f; //speed of the movement of the player
     private static float gravityNumber = (-9.81f * 2.5f); //this number is negative.
     private float jumpHeight = 2.0f;
 
@@ -15,8 +15,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundMask; //control what objects this scene would check for.
 
     private Vector3 velocity;
-    private bool isPlayerGrounded; 
+    private bool isPlayerGrounded;
 
+    [SerializeField] private FixedJoystick fixedJoystickGameObject; //variables where is contained the joystick.
+    private float xPositionTransform = 0.0f;
+    private float zPositionTransform = 0.0f;
     // Start is called before the first frame update
     private void Start()
     {
@@ -35,8 +38,8 @@ public class PlayerMovement : MonoBehaviour
 
         }
         //get the axis of the movement.
-        float xPositionTransform = Input.GetAxis("Horizontal");
-        float zPositionTransform = Input.GetAxis("Vertical");
+        xPositionTransform = fixedJoystickGameObject.Horizontal; //we take the input horizontal axis taken from the joystick.
+        zPositionTransform = fixedJoystickGameObject.Vertical;   //we take the input vertical axis taken from the joystick.
 
         //direction that we want to do. this is a sum of vectors 
         Vector3 movementPosition = transform.right * xPositionTransform + transform.forward * zPositionTransform;
