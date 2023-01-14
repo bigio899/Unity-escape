@@ -38,10 +38,9 @@ public class LookAroundScript : MonoBehaviour
                 touchStartPosition = theTouch.position;  Debug.Log(theTouch.position);
 
             }
-            else if(theTouch.phase== TouchPhase.Ended)
-            {
-                Debug.Log("The touch phase is ended"); //debug 
-                touchEndPosition = theTouch.position; Debug.Log(theTouch.position);
+            if(theTouch.phase== TouchPhase.Ended)
+            { 
+                touchEndPosition = theTouch.position;
                 //get the information about the axis(input from the touchscreen).
                 axisTouchscreenInputX = (touchEndPosition.y - touchStartPosition.y);
                 axisTouchscreenInputY = (touchEndPosition.x - touchStartPosition.x);
