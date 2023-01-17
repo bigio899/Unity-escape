@@ -7,22 +7,23 @@ public class LookAroundScript : MonoBehaviour
     private static float mouseSensitivity = 0.4f; //value of the sensitivty of the camera's rotation.
     //in this variable there's the transform component of the father-gameobject of the player.
     [SerializeField] private Transform playerBody;
-    private float xRotation = 0;
+    private float xRotation = 0.0f;
 
     //touchscreen axis' variables.
     private float touchscreenInputX = 0.0f;
     private float touchscreenInputY = 0.0f;
 
-    //TOUCHSCREEN AREA
-    private Touch theTouch;
-    private Vector2 touchStartPosition = new Vector2(0.0f, 0.0f);
-    private Vector2 touchEndPosition = new Vector2(0.0f, 0.0f);
+    //TOUCHSCREEN AREA.
+    private Touch theTouch; //vector 2 that reveals the position of the touch got from the input of the player
+    private Vector2 touchEndPosition;
+    private Vector2 touchStartPosition;
+    //axis.
     private float axisTouchscreenInputX;
     private float axisTouchscreenInputY;
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-       // Cursor.lockState = CursorLockMode.Locked; 
+        Vector2 touchStartPosition = new Vector2(0.0f, 0.0f);
+        Vector2 touchEndPosition = new Vector2(0.0f, 0.0f);
     }
 
     // Update is called once per frame
@@ -34,19 +35,26 @@ public class LookAroundScript : MonoBehaviour
             theTouch = Input.GetTouch(0); //get the first touch that is detected.
             if (theTouch.position.x >= 600.0f)
             {
-                if ((theTouch.phase == TouchPhase.Began) || (theTouch.phase == TouchPhase.Moved)) //verify if the inputs detected from the touchscreen are started.
+                if ((theTouch.phase == TouchPhase.Began)) //verify if the inputs detected from the touchscreen are started.
                 {
                     touchStartPosition = theTouch.position;
                 }
-                if ((theTouch.phase == TouchPhase.Ended))
+                if ((theTouch.phase == TouchPhase.Moved) || (theTouch.phase == TouchPhase.Ended))
                 {
                     touchEndPosition = theTouch.position;
+
+                    //get the information about the axis(input from the touchscreen).
+                    axisTouchscreenInputX = (touchEndPosition.x - touchStartPosition.x);
+                    axisTouchscreenInputY = (touchEndPosition.y - touchStartPosition.y);
+                    if (theTouch.phase==TouchPhase.Ended)
+                    {
+                        //get the information about the axis(input from the touchscreen).
+                        axisTouchscreenInputX = 0.0f;
+                        axisTouchscreenInputY = 0.0f;
+                    }
                 }
             }
         }
-        //get the information about the axis(input from the touchscreen).
-        axisTouchscreenInputX = (touchEndPosition.x - touchStartPosition.x);
-        axisTouchscreenInputY = (touchEndPosition.y - touchStartPosition.y);
 
         //this line of script will get the 'x'movements of the mouse and the result will moltiplied for the 'y' rotation of the father-gameobject(line 24)
         touchscreenInputX = axisTouchscreenInputX * mouseSensitivity * Time.deltaTime;

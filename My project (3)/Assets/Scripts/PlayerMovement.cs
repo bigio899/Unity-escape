@@ -6,20 +6,20 @@ using TMPro;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private CharacterController playerController; //reference to our character controller(motor that drives our player).
-    private static float speedOfTheMovement = 0.05f; //speed of the movement of the player
+    private static float speedOfTheMovement = 0.05f; //speed of the movement of the player.
     private static float gravityNumber = (-9.81f * 2.5f); //this number is negative.
     private float jumpHeight = 2.0f;
 
-    [SerializeField] private Transform groundCheckerGameObjectTransform;
-    private static float groundDistance = 0.4f;
+    [SerializeField] private Transform groundCheckerGameObjectTransform; //transform value of the player.
+    private static float groundDistance = 0.4f; //distance between ground and the player gameobject
     [SerializeField] private LayerMask groundMask; //control what objects this scene would check for.
 
-    private Vector3 velocity;
-    private bool isPlayerGrounded;
+    private Vector3 velocity; //vector that contain the velocity.
+    private bool isPlayerGrounded; //boolean value that verify if the player is on ground.
 
     [SerializeField] private FixedJoystick fixedJoystickGameObject; //variables where is contained the joystick.
-    private float xPositionTransform = 0.0f;
-    private float zPositionTransform = 0.0f;
+    private float xPositionTransform = 0.0f; //x axis pos
+    private float zPositionTransform = 0.0f; //z axis pos
     // Start is called before the first frame update
     private void Start()
     {
@@ -47,13 +47,13 @@ public class PlayerMovement : MonoBehaviour
         //this vector is molitiplied by speed.
         playerController.Move(movementPosition * speedOfTheMovement); //this function can be used only with a charactercontroller object.
 
-        if ((isPlayerGrounded == true) && (Input.GetButtonDown("Jump")))
+        if ((isPlayerGrounded == true) && (Input.GetButtonDown("Jump")))  //conditions
         {
             //velocity occurred for do the jump of the player
             velocity.y = Mathf.Sqrt(jumpHeight * (-2.0f * gravityNumber)); //square root (formule of a jump).
         }
         velocity.y += gravityNumber * Time.deltaTime; //we apply the gravity force to the y value of transform position of the playercontroller.
         //in this line of code there's the function that apply the gravity to the player gameobject.
-        playerController.Move(velocity * Time.deltaTime);
+        playerController.Move(velocity * Time.deltaTime); 
     }
 }
